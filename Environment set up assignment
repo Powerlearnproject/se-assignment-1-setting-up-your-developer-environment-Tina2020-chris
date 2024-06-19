@@ -12,4 +12,23 @@ TABLE OF CONTENTS
 7. Code editor extension installation
 
 Introduction
-The document provides instructions on how to set up a developer environment on 
+The document provides instructions on how to set up a developer environment on and the necessary tools required in setting up the environment.
+
+1. Selecting the operating system(OS)
+
+Preferred OS: Windows 11
+installing windows 11
+1. Downloading the media creation tool
+Visit windows 11 page(https:/www.microsoft.com/software-download/windows 11)
+Download the media creation tool
+
+Create a bootable USB drive  or ISO file
+Run the media creation tool
+Follow the prompts to create a bootable USB drive
+install windows 11
+Insert the USB drive into the computer
+Restart the computer
+Access the boot menu(F2,F12 or Del)
+Select the USB drive as the boot device and press enter
+Follow the installation prompts to complete the installation of windows 11
+
