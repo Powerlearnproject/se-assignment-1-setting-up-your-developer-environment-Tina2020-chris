@@ -1,6 +1,15 @@
-Comprehensive Developer Environment Setup Documentation
+Developer Environment Setup Documentation
 
 TABLE OF CONTENTS
 
 1. Windows 11 installation
-2. 
+2. IDE Installation
+3. Version control System setup
+4. Programming languages and runtimes installation
+4. Package managers installation
+5. Database installation and configuration
+6. Development environment and virtualization setup
+7. Code editor extension installation
+
+Introduction
+The document provides instructions on how to set up a developer environment on 
