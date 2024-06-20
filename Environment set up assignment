@@ -1,34 +1,545 @@
-Developer Environment Setup Documentation
+Developer Environment Setup Guide
 
 TABLE OF CONTENTS
 
-1. Windows 11 installation
-2. IDE Installation
+1. Selecting the preferred operating system
+2. Installing a text editor or intergrated development environment (IDE)
 3. Version control System setup
 4. Programming languages and runtimes installation
 4. Package managers installation
 5. Database installation and configuration
 6. Development environment and virtualization setup
-7. Code editor extension installation
+7. Exploring extensions and plugins
 
 Introduction
+
 The document provides instructions on how to set up a developer environment on and the necessary tools required in setting up the environment.
 
-1. Selecting the operating system(OS)
+I. Selecting the operating system(OS)
 
 Preferred OS: Windows 11
-installing windows 11
-1. Downloading the media creation tool
-Visit windows 11 page(https:/www.microsoft.com/software-download/windows 11)
-Download the media creation tool
 
-Create a bootable USB drive  or ISO file
-Run the media creation tool
-Follow the prompts to create a bootable USB drive
-install windows 11
-Insert the USB drive into the computer
-Restart the computer
-Access the boot menu(F2,F12 or Del)
-Select the USB drive as the boot device and press enter
-Follow the installation prompts to complete the installation of windows 11
+installing windows 11
+
+### Step 1: Check System Requirements
+Ensure your PC meets the minimum system requirements for Windows 11:
+- Processor: 1 GHz or faster with 2 or more cores on a compatible 64-bit processor or System on a Chip (SoC).
+- RAM: 4 GB or more.
+- Storage: 64 GB or larger storage device.
+- Firmware: UEFI, Secure Boot capable.
+- TPM: Trusted Platform Module (TPM) version 2.0.
+- Graphics card: DirectX 12 compatible graphics / WDDM 2.x.
+- Display: >9” with HD Resolution (720p).
+- Internet connection: Internet connectivity is necessary to perform updates and to download and take advantage of some features.
+
+### Step 2: Backup Your Data
+Backup important data to an external drive or cloud storage.
+
+### Step 3: Create a Windows 11 Installation Media
+1. **Download the Windows 11 Installation Assistant** or **Media Creation Tool** from the [official Microsoft website](https://www.microsoft.com/software-download/windows11).
+2. Follow the prompts to create a bootable USB drive or download the ISO file.
+
+### Step 4: Prepare the Installation Media
+If you chose to use a USB drive:
+1. Insert the USB drive into your PC.
+2. Ensure the PC is set to boot from USB (you may need to change boot order in BIOS/UEFI settings).
+
+### Step 5: Install Windows 11
+1. **Boot from the Installation Media**:
+   - Restart your PC and boot from the USB drive.
+   - You might need to press a key (like F12, F2, Delete, or Esc) to enter the boot menu.
+2. **Install Windows 11**:
+   - Follow the on-screen prompts.
+   - Select your language, time, and keyboard preferences.
+   - Click "Install now."
+   - Enter your product key (if required).
+   - Accept the license terms.
+   - Choose the type of installation (Upgrade: Keeps your files, settings, and applications; Custom: Install Windows only (advanced)).
+   - Select the partition where you want to install Windows 11.
+
+### Step 6: Configure Windows 11
+1. After installation, follow the on-screen prompts to set up Windows 11.
+2. Connect to a network, sign in with your Microsoft account, and customize your settings.
+
+### Step 7: Install Updates and Drivers
+1. Go to **Settings > Update & Security > Windows Update** and check for updates.
+2. Install any necessary drivers from your PC manufacturer’s website.
+
+### Step 8: Restore Your Data
+Once Windows 11 is installed and set up, restore your data from the backup.
+
+### Step 9: Install Your Applications
+Reinstall the applications you need and ensure they are updated to the latest versions compatible with Windows 11.
+
+II. Installing a text editor(IDE)
+
+Suitable IDE: Visual studio code
+
+### installing visual studio code for Windows 
+
+1. **Download the Installer**
+   - Go to the [Visual Studio Code download page](https://code.visualstudio.com/Download).
+   - Click on the Windows download link to get the installer.
+
+2. **Run the Installer**
+   - Locate the downloaded file (usually in your Downloads folder) and double-click on it to run the installer.
+
+3. **Follow the Installation Wizard**
+   - Accept the agreement terms.
+   - Choose the destination location for the installation.
+   - Select the additional tasks you want (e.g., creating a desktop icon, adding to the path).
+   - Click `Install` to start the installation process.
+
+4. **Launch Visual Studio Code**
+   - Once the installation is complete, you can launch VS Code immediately by selecting the "Launch Visual Studio Code" checkbox and clicking `Finish`.
+
+III. Setting up a version control system (VCS)
+
+### Step 1: Install Git
+
+#### For Windows
+1. **Download the Git Installer**
+   - Go to the [Git for Windows download page](https://gitforwindows.org/).
+   - Download the installer.
+
+2. **Run the Installer**
+   - Double-click the downloaded installer.
+   - Follow the setup instructions, choosing your preferences. The default options are usually fine for most users.
+
+### Step 2: Configure Git
+After installing Git, configure your username and email, which will be used in your commits.
+
+1. **Set Your Username**
+   ```bash
+   git config --global user.name "Your Name"
+   ```
+
+2. **Set Your Email**
+   ```bash
+   git config --global user.email "your.email@example.com"
+   ```
+
+### Step 3: Initialize a Git Repository
+1. **Navigate to Your Project Directory**
+   - Open Terminal (or Git Bash on Windows).
+   - Navigate to your project directory:
+     ```bash
+     cd /path/to/your/project
+     ```
+
+2. **Initialize the Repository**
+   ```bash
+   git init
+   ```
+
+### Step 4: Add Files to the Repository
+1. **Track Files**
+   - Add the files you want to track:
+     ```bash
+     git add .
+     ```
+   - The `.` adds all files in the current directory.
+
+2. **Commit the Files**
+   - Commit the added files with a message:
+     ```bash
+     git commit -m "Initial commit"
+     ```
+
+### Step 5: Set Up a Remote Repository
+If you want to collaborate with others or store your repository online, set up a remote repository using a service like GitHub, GitLab, or Bitbucket.
+
+1. **Create a Repository on GitHub**
+   - Go to [GitHub](https://github.com/) and sign in.
+   - Click the `+` icon in the upper-right corner and select `New repository`.
+   - Follow the prompts to create a new repository.
+
+2. **Add the Remote Repository to Your Local Repository**
+   - Copy the remote repository URL from GitHub.
+   - In your terminal, add the remote repository:
+     ```bash
+     git remote add origin https://github.com/yourusername/your-repository.git
+     ```
+
+### Step 6: Push Your Code to the Remote Repository
+1. **Push Your Code**
+   ```bash
+   git push -u origin master
+   ```
+
+### Step 7: Collaborate and Manage Your Code
+1. **Create a Branch**
+   - Create a new branch for developing a new feature:
+     ```bash
+     git checkout -b feature-branch
+     ```
+
+2. **Merge Branches**
+   - After making changes and committing them, switch back to the master branch:
+     ```bash
+     git checkout master
+     ```
+   - Merge your changes:
+     ```bash
+     git merge feature-branch
+     ```
+
+3. **Pull Changes**
+   - To get the latest changes from the remote repository:
+     ```bash
+     git pull origin master
+     ```
+
+4. **Resolve Conflicts**
+   - If there are merge conflicts, resolve them in your code editor, then add and commit the resolved files:
+     ```bash
+     git add .
+     git commit -m "Resolved merge conflicts"
+     ```
+ # IV. Installing Necessary Programming languages and runtimes
+
+ Installing python 
+
+### Step 1: Download the Python Installer
+1. **Visit the Official Python Website**
+   - Go to the [Python downloads page](https://www.python.org/downloads/).
+
+2. **Choose the Latest Version**
+   - Download the latest version of Python by clicking the appropriate link for your system (e.g., "Download Python 3.11.3").
+
+### Step 2: Run the Installer
+1. **Locate the Installer**
+   - Find the downloaded Python installer in your Downloads folder or the location where your browser saves downloaded files.
+
+2. **Run the Installer**
+   - Double-click the installer file to start the installation process.
+
+### Step 3: Customize Installation
+1. **Select Installation Options**
+   - On the first screen, you will see two options: "Install Now" and "Customize Installation."
+   - Before proceeding, **check the box** that says **"Add Python to PATH"** at the bottom of the screen. This step is crucial as it allows you to run Python from the command line.
+
+2. **Install Now**
+   - If you want to install Python with default settings, click on **"Install Now"**.
+   - If you want to customize the installation (e.g., selecting the installation directory or adding optional features), click on **"Customize Installation"** and follow the prompts.
+
+### Step 4: Complete the Installation
+1. **Wait for the Installation to Complete**
+   - The installer will copy the necessary files to your computer and set up Python.
+
+2. **Setup Was Successful**
+   - Once the installation is complete, you will see a screen indicating that the setup was successful.
+   - Click on **"Close"** to exit the installer.
+
+### Step 5: Verify the Installation
+1. **Open Command Prompt**
+   - Press `Win + R`, type `cmd`, and press `Enter` to open the Command Prompt.
+
+2. **Check Python Version**
+   - Type the following command and press `Enter`:
+     ```bash
+     python --version
+     ```
+   - You should see the installed Python version displayed (e.g., `Python 3.11.3`).
+
+### Step 6: Install pip (if not included)
+`pip` is the package installer for Python and should be included by default with the latest Python installations. To check if pip is installed:
+
+1. **Check pip Version**
+   - In Command Prompt, type:
+     ```bash
+     pip --version
+     ```
+   - If pip is installed, you will see the version number. If not, you can install it manually.
+
+2. **Install pip Manually (if necessary)**
+   - Download `get-pip.py` from the [pip installation page](https://pip.pypa.io/en/stable/installation/).
+   - Run the following command in Command Prompt to install pip:
+     ```bash
+     python get-pip.py
+     ```
+
+### Step 7: Install Virtual Environment (optional but recommended)
+Using virtual environments is a good practice for managing project-specific dependencies.
+
+1. **Install virtualenv**
+   - In Command Prompt, type:
+     ```bash
+     pip install virtualenv
+     ```
+
+2. **Create a Virtual Environment**
+   - Navigate to your project directory:
+     ```bash
+     cd /path/to/your/project
+     ```
+   - Create a virtual environment:
+     ```bash
+     python -m venv myenv
+     ```
+
+3. **Activate the Virtual Environment**
+   - Activate the virtual environment:
+     ```bash
+     myenv\Scripts\activate
+     ```
+   - You should see `(myenv)` in the command prompt, indicating the virtual environment is active.
+ 
+ v. Installing package managers
+
+### 1. **Installing `pip` for Python**
+
+`pip` is the package manager for Python, and it often comes installed with Python. Here are the steps to ensure it is installed:
+
+1. **Verify `pip` Installation**
+   - Open Command Prompt and type:
+     pip --version
+     ```
+   - If `pip` is installed, you will see the version number. If not, proceed to the next step.
+
+2. **Install `pip` Manually (if necessary)**
+   - Download `get-pip.py` from the [pip installation page](https://pip.pypa.io/en/stable/installation/).
+   - Open Command Prompt, navigate to the directory where you downloaded `get-pip.py`, and run:
+     ```bash
+     python get-pip.py
+
+VI. Database configuration
+
+Installing MySQL
+
+### Step 1: Download the MySQL Installer
+
+1. **Visit the Official MySQL Website**
+   - Go to the [MySQL download page](https://dev.mysql.com/downloads/installer/).
+
+2. **Choose the Installer**
+   - Select the "MySQL Installer for Windows" and choose the appropriate version (generally the latest stable release).
+   - Click on "Download" and you may be prompted to sign in or sign up for an Oracle account. You can skip this step by clicking on "No thanks, just start my download."
+
+### Step 2: Run the MySQL Installer
+
+1. **Locate the Downloaded Installer**
+   - Find the downloaded file (usually in your Downloads folder) and double-click on it to run the installer.
+
+2. **Begin the Installation Process**
+   - If prompted by User Account Control, click "Yes" to allow the installer to make changes to your device.
+
+### Step 3: Choose Installation Type
+
+1. **Select Setup Type**
+   - You will be presented with several setup options:
+     - Developer Default: Installs MySQL server and other necessary tools for development.
+     - Server Only: Installs only the MySQL server.
+     - Client Only: Installs only the MySQL client programs and libraries.
+     - Full: Installs all MySQL products.
+     - Custom: Allows you to choose which products and features to install.
+   - Choose the setup type that best fits your needs. For most users, "Developer Default" is a good choice. Click "Next."
+
+2. **Check for Requirements**
+   - The installer will check if you have the necessary requirements. If any are missing, the installer will prompt you to install them. Click "Execute" to install the required software.
+
+### Step 4: Installation
+
+1. **Ready to Install**
+   - After checking the requirements, you will see a list of MySQL products that will be installed. Click "Execute" to begin the installation process.
+
+2. **Complete Installation**
+   - Once the installation is complete, click "Next" to proceed.
+
+### Step 5: Configuration
+
+1. **Configuration Overview**
+   - The installer will guide you through the configuration of MySQL server and other installed products. Click "Next" to start the configuration process.
+
+2. **MySQL Server Configuration**
+   - **Type and Networking**: Choose the configuration type (typically "Development Computer"). Ensure "TCP/IP" is selected, and set the port to 3306. Click "Next."
+   - **Authentication Method**: Choose the authentication method. The recommended option is "Use Strong Password Encryption (RECOMMENDED)." Click "Next."
+   - **Accounts and Roles**: Set the root password and, optionally, create additional MySQL user accounts. Click "Next."
+   - **Windows Service**: Configure MySQL to run as a Windows service. You can also choose to have the service start automatically. Click "Next."
+
+3. **Apply Configuration**
+   - Review your configuration settings and click "Execute" to apply them. Once the configuration is complete, click "Finish."
+
+### Step 6: Complete the Installation
+
+1. **Product Configuration**
+   - After configuring the MySQL server, the installer may prompt you to configure other MySQL products such as MySQL Router or MySQL Shell. Follow the prompts to configure these products as needed.
+
+2. **Installation Complete**
+   - Once all products are installed and configured, click "Finish" to exit the installer.
+
+### Step 7: Verify Installation
+
+1. **Open MySQL Workbench**
+   - If you installed MySQL Workbench, open it from the Start menu.
+
+2. **Connect to MySQL Server**
+   - In MySQL Workbench, click the "+" icon to set up a new connection.
+   - Enter your connection details (hostname, port, username, and password) and test the connection.
+   - If the connection is successful, you are ready to start using MySQL.
+
+### Additional Tips
+
+- **Environment Variables**: Ensure that the MySQL binaries are added to your system's PATH environment variable to allow easy access to MySQL commands from the command line.
+- **Updating MySQL**: Keep your MySQL installation up to date by regularly checking for updates from the MySQL website.
+
+VII. Setup development environments and virtualization
+
+### Setting Up Development Environment Using Docker
+
+Docker allows you to containerize applications, making it easier to manage dependencies and environments.
+
+#### Step 1: Install Docker
+
+1. **Download Docker Desktop**
+   - Go to the [Docker website](https://www.docker.com/products/docker-desktop) and download Docker Desktop for Windows or macOS.
+
+2. **Run the Installer**
+   - Double-click the downloaded installer and follow the instructions to install Docker Desktop.
+
+3. **Start Docker Desktop**
+   - After installation, start Docker Desktop from the Start menu (Windows) or Applications folder (macOS).
+   - Docker should automatically start, and you should see the Docker icon in your system tray.
+
+#### Step 2: Create a Dockerfile
+
+1. **Create a Project Directory**
+   - Create a new directory for your project. For example:
+     ```bash
+     mkdir my_project
+     cd my_project
+     ```
+
+2. **Create a Dockerfile**
+   - Inside your project directory, create a file named `Dockerfile` with the following content (example for a Python project):
+     ```Dockerfile
+     # Use an official Python runtime as a parent image
+     FROM python:3.8-slim
+
+     # Set the working directory in the container
+     WORKDIR /usr/src/app
+
+     # Copy the current directory contents into the container at /usr/src/app
+     COPY . .
+
+     # Install any needed packages specified in requirements.txt
+     RUN pip install --no-cache-dir -r requirements.txt
+
+     # Make port 80 available to the world outside this container
+     EXPOSE 80
+
+     # Define environment variable
+     ENV NAME World
+
+     # Run app.py when the container launches
+     CMD ["python", "app.py"]
+     ```
+
+3. **Create `requirements.txt`**
+   - Create a `requirements.txt` file in your project directory listing your Python dependencies.
+
+4. **Create `app.py`**
+   - Create a simple `app.py` script (or your main application script) in the project directory.
+
+#### Step 3: Build and Run the Docker Container
+
+1. **Build the Docker Image**
+   - In your project directory, run:
+     ```bash
+     docker build -t my_python_app .
+     ```
+
+2. **Run the Docker Container**
+   - Run the container:
+     ```bash
+     docker run -p 4000:80 my_python_app
+     ```
+   - This command maps port 80 in the container to port 4000 on your host machine.
+
+3. **Access Your Application**
+   - Open your browser and navigate to `http://localhost:4000` to see your running application.
+
+### Setting Up Development Environment Using Virtual Machines
+
+Using virtual machines allows you to create isolated environments with their own operating systems.
+
+#### Step 1: Install Virtualization Software
+
+1. **Download and Install VirtualBox**
+   - Go to the [VirtualBox website](https://www.virtualbox.org/) and download the latest version for your operating system.
+   - Follow the installation instructions.
+
+2. **Download and Install Vagrant**
+   - Go to the [Vagrant website](https://www.vagrantup.com/) and download the latest version for your operating system.
+   - Follow the installation instructions.
+
+#### Step 2: Create a Vagrantfile
+
+1. **Create a Project Directory**
+   - Create a new directory for your project. For example:
+     ```bash
+     mkdir my_project
+     cd my_project
+     ```
+
+2. **Initialize Vagrant**
+   - In your project directory, run:
+     ```bash
+     vagrant init
+     ```
+
+3. **Edit the Vagrantfile**
+   - Open the generated `Vagrantfile` in a text editor and configure it. For example, to use an Ubuntu box:
+     ```ruby
+     Vagrant.configure("2") do |config|
+       config.vm.box = "ubuntu/bionic64
+
+viii.  Exploring extensions and plugins in Visual Studio Code (VS Code)
+
+### Step 1: Open the Extensions View
+
+1. **Open Visual Studio Code**
+   - Launch VS Code on your computer.
+
+2. **Open the Extensions View**
+   - Click on the Extensions icon in the Activity Bar on the side of the window, or press `Ctrl+Shift+X`.
+   - Alternatively, you can use the shortcut `Ctrl+Shift+P` to open the Command Palette, then type `Extensions: Show Extensions` and press `Enter`.
+
+### Step 2: Search for Extensions
+
+1. **Search for Extensions**
+   - In the Extensions view, you can search for extensions by typing in the search bar.
+   - For example, you can search for "Python" to find extensions related to Python development.
+
+2. **Explore Recommended Extensions**
+   - Scroll down to see a list of recommended extensions based on the language you are working with or the extensions installed by others in your community.
+
+### Step 3: Install Extensions
+
+1. **Install an Extension**
+   - Click on the extension you want to install.
+   - Click the "Install" button.
+
+2. **Manage Installed Extensions**
+   - Once installed, you can manage your extensions by enabling, disabling, or uninstalling them from the Extensions view.
+
+### Recommended Extensions for Various Functionalities
+
+- **Syntax Highlighting**: Extensions like "Color Highlight" or "Bracket Pair Colorizer" can enhance syntax highlighting.
+- **Linting**: For linting, extensions like "ESLint" (JavaScript) or "Pylint" (Python) can be used.
+- **Code Formatting**: "Prettier" is a popular extension for code formatting in various languages.
+- **Version Control Integration**: The "GitLens" extension enhances Git integration, providing more insights and functionality within VS Code.
+
+### Additional Tips
+
+- **Extensions Marketplace**: Explore the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/vscode) for a wide range of extensions categorized by functionality and popularity.
+- **User Settings**: Configure your extensions by accessing the "Extensions" section in your user settings (`Ctrl+,`).
+
+
+
+
+
+
+
+
 
